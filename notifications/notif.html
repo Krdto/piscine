@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ECE In - Notifications</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" async defer></script>
+
+
+    <link rel="stylesheet" type="text/css" href="notif.css">
+    <script src="notif.js"></script>
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="landing-section">
+            <div class="landing-text">
+                <h2>Bienvenue sur le site web social media professionnel de la communauté ECE Paris ! <br><br> Nous sommes ravis de vous présenter un réseau social conçu spécialement pour répondre à vos besoins professionnels.
+                    <br><br> Que vous soyez étudiant en licence, master ou doctorat, apprenti dans une entreprise, à la recherche d'un stage ou même un enseignant ou employé de l'École à la recherche de partenaires pour vos projets de recherche, ce site
+                    web est fait pour vous.
+                    <br><br> Notre plateforme s'adresse à tous ceux qui prennent leur vie professionnelle au sérieux et qui souhaitent trouver de nouvelles opportunités pour développer leur carrière. <br><br> Ici, vous pourrez vous connecter avec d'autres
+                    personnes partageant les mêmes objectifs professionnels que vous.</h2>
+            </div>
+        </div>
+        <header>
+            <h1>ECE In: Social Media Professionnel de l'ECE Paris</h1>
+            <a href="accueil.html">
+                <!-- <img src="/assets/lf3f.png" alt="logo" id="logo"> --> 
+                <img src="assets\lf3f.png" alt="logo" id ="logo">
+            </a>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="#">Mon Réseau</a></li>
+                <li><a href="#">Vous</a></li>
+                <li><a href="notif.html">Notifications <p class="nbNotif">+9</p> </a>
+                </li>
+                <li><a href="#">Messagerie</a></li>
+                <li><a href="#">Emplois</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="container">
+                <div class="contenuNotif">
+                    <h3>test</h3>
+                </div>
+                <div class="listeNotif">
+                    <h1>Notifications</h1>
+                    <button class="notification error" onclick="resumeNotif(1)">
+                        <p>Test</p>
+                    </button>
+                    <button class="notification Lu" onclick="resumeNotif(2)">
+                        <p>Test</p>
+                    </button>
+
+    
+                    
+                </div>
+                
+                
+                
+            </div>
+            
+
+        </main>
+
+        
+
+        <footer>
+            <p>Contactez-nous par mail, téléphone ou adresse physique. Voici notre localisation sur Google Maps:</p>
+            <!-- Intégration de Google Maps ici -->
+            <div id="map"></div>
+        </footer>
+    </div>
+</body>
+
+</html>
