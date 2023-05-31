@@ -28,13 +28,14 @@ const notifs = [
 
 function selectNotif() {
     const listeNotif = document.querySelector('.listeNotif');
+    let nbNotif = count(listeNotif);
     listeNotif.innerHTML = '';
 
     notifs.forEach(notification => {
         const listItem = document.createElement('li');
         listItem.textContent = notification.subject;
         listItem.addEventListener('click', () => {
-            displayEmailContent(notification);
+            displayNotif(notification);
         });
         listeNotif.appendChild(listItem);
     });
@@ -50,20 +51,18 @@ function displayNotif(notification)
         
 }
 
-function resumeNotif(id) {
-    for (let i = 0; i < notification.length; i++) {
+function resumeNotif()
+{
+    $(".notification").createElement('li');
 
-        if (notification[i].id == id) {
-            const autor = notification[i].autor;
-            const resume = notification[i].subject;
-
-            innerHTML = `
-            <h4>${notification[i].autor}</h4>
-            <p>${notification[i].subject}</p>
-            `;
-        }
-        else
-            innerHTML = <p>La notif est vide</p>
-        
-    }
 }
+
+function notifContent() {
+    $(".contenuNotif").append('<p>${notifs.subject}</p>');// a afficher dynamiquement
+    
+}
+
+$(function()
+{
+    $(".notifications")
+})
