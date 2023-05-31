@@ -52,7 +52,7 @@ $(function () {
         //$("#notification").animate({ height: "10%" }, "slow")
     })
     $(".nbNotif").mouseenter(function () {
-        $(".nbNotif").nbNotif();
+        //$(".nbNotif").nbNotif();
     })
 
     $("#container").dblclick(function () {
@@ -64,8 +64,15 @@ $(function () {
         displayNotificationContent(1)// faudra definir le paramètre id pour qu'il récupère quel id de notif c'est
     })
 
-    bulleNotif();
+    $(".listeNotif").click(function () {
+        //testNotif();
+    })
+
     initNotif();
+
+    bulleNotif();
+    //document.body.onload = initNotif();
+
 
 
 
@@ -100,35 +107,51 @@ function displayNotificationContent(id) {
 `;
 }
 
-function initNotif() {
+
+
+function initNotif2() {
     let nbNotif = 0;
-    const nb = document.querySelector('.nbNotif');
-    const spot = document.querySelector('listeNotif');
+    //const nb = document.querySelector('.nbNotif');
     for (let i = 0; i < notifications.length; i++) {
 
         if (notifications[i].statut == 0) {
-            $(".nbNotif").css("opacity", "100%");
+            //$(".nbNotif").css("opacity", "100%");
             nbNotif += 1;
-            notif = document.createElement('div');
-            notif.className = 'notification.error';
+            
+            const spot1 = document.querySelector('.listeNotif');
 
-            let text = document.createTextNode(notifications[i].subject);
+            if (spot1) {
+                const notif = document.createElement('div');
+                notif.classList.add('notification.error');
+                spot1.insertAdjacentElement('afterend', notif)
+                
+            }
+            //spot1.appendChild(notif);
+
+
+
+            //notif.className = 'notification.error';
+
+            let text = document.createTextNode(notifications[i].subject,'<br>');
+            const spot = document.querySelector('.notification.error');
+            alert("Ca fonctionne");
+
             spot.append(text);
-            //document.body.appendChild(notif);
-            //notif.classList.add(notifications[i].autor);
 
-            notif.innerHTML = `
+            //document.body.appendChild(text);
+
+            /*notif.innerHTML = `
             <h2><strong>${notifications[i].autor}</strong></h2>
             <p>${notifications[i].subject}</p>
             `
+            */
 
         }
 
         else if (notifications[i].statut == 1) {
             $(".nbNotif").css("opacity", "100%");
-            nbNotif += 1;
             notif = document.createElement('div');
-            notif.className = 'notification.Lu';
+            notif.className = 'notification Lu';
             notif.innerHTML = `
             <h2><strong>${notifications[i].autor}</strong></h2>
             <p>${notifications[i].subject}</p>
@@ -138,6 +161,52 @@ function initNotif() {
     }
 }
 
+function initNotif() {
+    const spot1 = document.querySelector('.listeNotif');
+
+    for (let i = 0; i < notifications.length; i++) {
+
+        if (spot1) {
+
+            if (notifications[i].statut == 0)
+            {
+                const notif = document.createElement('div');
+                notif.classList.add('notification', 'error');
+
+                notif.innerHTML = `
+                <h2><strong>${notifications[i].autor}</strong></h2>
+                <p>${notifications[i].subject}</p>
+                `
+
+                spot1.insertAdjacentElement("beforeend", notif);
+
+    
+            }
+
+            else if(notifications[i].statut == 1)
+            {
+                const notif = document.createElement('div');
+                notif.classList.add('notification', 'Lu');
+
+                notif.innerHTML = `
+                <h2><strong>${notifications[i].autor}</strong></h2>
+                <p>${notifications[i].subject}</p>
+                `
+
+                spot1.insertAdjacentElement("beforeend", notif);
+
+            }
+            
+
+            
+            
+        }
+
+        
+    }
+
+            
+}
 
 function lectureNotif() {
 
