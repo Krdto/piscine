@@ -35,7 +35,7 @@
                 <li><a href="/Accueil/accueil.html">Accueil</a></li>
                 <li><a href="/MonReseau/reseau.html">Mon Réseau</a></li>
                 <li><a href="#">Vous</a></li>
-                <li><a href="/notifications/notif.html">Notifications <p class="nbNotif">+9</p></a></li>
+                <li><a href="/notifications/notif.html">Notifications <p class="nbNotif"></p></a></li>
                 <li><a href="#">Messagerie</a></li>
                 <li><a href="#">Emplois</a></li>
             </ul>
@@ -44,16 +44,16 @@
         <main>
             <div id="container">
                 <div class="contenuNotif">
-                    <h3>test</h3>
+
                 </div>
                 <div class="listeNotif">
                     <h1>Notifications</h1>
-                    <button class="notification error" onclick="notifContent()">
+                    <div class="notification error" id="notification" onclick="displayNotificationContent(1)">
                         <p>Test</p>
-                    </button>
-                    <button class="notification Lu" onclick="notifContent()">
+                    </div>
+                    <div class="notification Lu" id="notification" onclick="displayNotificationContent(2)">
                         <p>Test2</p>
-                    </button>
+                    </div>
 
 
 

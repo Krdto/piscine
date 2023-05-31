@@ -30,18 +30,22 @@ function lectureNotif() {
 
 }
 
-const notifs = [
+const notifications = [
     {
         id: 1,
         autor: "ECE",
         subject: "Test resumé notif",
-        content: "Test texte notification"
+        content: "Test texte notification",
+        statut: 0 // 0 pour non lu
+
     },
     {
         id: 2,
         autor: "ECE2",
         subject: "Test2 resumé notif",
-        content: "Test2 texte notification"
+        content: "Test2 texte notification",
+        statut: 1 // pour lu
+
     }
 ]
 
@@ -72,16 +76,44 @@ function displayNotif(notification)
 
 function resumeNotif()
 {
-    $(".notification").createElement('li');
+    const resume = document.querySelector('.notification');
+    const selectedNotification = notifications.find(notification => notification.id === id);
 
+    resume.innerHTML = `
+  <p><strong>${selectedNotification.subject}</strong></p>
+`;
 }
 
-function notifContent() {
-    $(".contenuNotif").append('<p>${notifs.subject}</p>');// a afficher dynamiquement
+$(function() {
+    $("#notification").mouseenter(function()
+                {
+                    $("#notification").animate({height : "25%"}, "slow")
+                })
+    $("#notification").mouseleave(function()
+                {
+                    $("#notification").animate({height : "10%"}, "slow")
+                })
+    $(".nbNotif").mouseenter(function()
+    {
+        $(".nbNotif").nbNotif();
+    })
+})
+
+function nbNotif() {
+    const divNb = document.querySelector('.nbNotif');// a afficher dynamiquement
+    let nb = notifications.count();
+    $(".nbNotif").append("<p>$nb</p>");
+
     
 }
 
-$(function()
-{
-    $(".notifications")
-})
+function displayNotificationContent(id) {
+    const notificationContentDiv = document.querySelector('.contenuNotif');
+
+    const selectedNotification = notifications.find(notification => notification.id === id);
+
+    notificationContentDiv.innerHTML = `
+  <h2><strong>De : </strong>${selectedNotification.autor}</h2>
+  <p>${selectedNotification.content}</p>
+`;
+  }
