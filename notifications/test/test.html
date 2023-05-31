@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Notifications Center</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .notification-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    .notification-list li {
+      cursor: pointer;
+      padding: 10px;
+      background-color: #f2f2f2;
+      border-bottom: 1px solid #ddd;
+    }
+    .notification-list li:hover {
+      background-color: #e6e6e6;
+    }
+    .notification-content {
+      padding: 20px;
+    }
+  </style>
+
+  <script type="text/javascript">
+
+    // Sample notification data (replace with your own data)
+    const notifications = [
+      {
+        id: 1,
+        title: "Notification 1",
+        content: "This is the content of notification 1."
+      },
+      {
+        id: 2,
+        title: "Notification 2",
+        content: "This is the content of notification 2."
+      },
+      {
+        id: 3,
+        title: "Notification 3",
+        content: "This is the content of notification 3."
+      }
+    ];
+
+    // Function to display the selected notification content
+    function displayNotificationContent(notificationId) {
+      const notificationContentDiv = document.querySelector('#notification-content');
+      const selectedNotification = notifications.find(notification => notification.id === notificationId);
+
+      notificationContentDiv.innerHTML = `
+    <h2>${selectedNotification.title}</h2>
+    <p>${selectedNotification.content}</p>
+  `;
+    }
+
+
+
+  </script>
+</head>
+
+<body>
+  <h1>Notification System</h1>
+
+  <div id="notifications">
+    <ul class="notification-list">
+      <li onclick="displayNotificationContent(1)">Notification 1</li>
+      <li onclick="displayNotificationContent(2)">Notification 2</li>
+      <li onclick="displayNotificationContent(3)">Notification 3</li>
+    </ul>
+  </div>
+
+  <div id="notification-content" class="notification-content">
+    <!-- notification content will be dynamically populated here -->
+  </div>
+
+</body>
+
+</html>

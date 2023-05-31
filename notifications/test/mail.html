@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Test Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .email-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .email-list li {
+      cursor: pointer;
+      padding: 10px;
+      background-color: #f2f2f2;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .email-list li:hover {
+      background-color: #e6e6e6;
+    }
+
+    .email-content {
+      padding: 20px;
+    }
+  </style>
+
+  
+</head>
+
+<body>
+  <h1>Mail Reader</h1>
+
+  <div id="inbox">
+    <ul class="email-list">
+      <!-- email list will be dynamically populated here -->
+    </ul>
+  </div>
+
+  <div id="email-content" class="email-content">
+    <!-- email content will be dynamically populated here -->
+  </div>
+
+  <script type="text/javascript">
+    // Sample email data (replace with your own data)
+    const emails = [
+      {
+        id: 1,
+        sender: "john@example.com",
+        subject: "Hello",
+        content: "Hi there, just wanted to say hello!"
+      },
+      {
+        id: 2,
+        sender: "jane@example.com",
+        subject: "Meeting Reminder",
+        content: "Don't forget about our meeting tomorrow at 10 AM."
+      }
+    ];
+
+    // Function to populate the email list
+    function populateEmailList() {
+      const emailList = document.querySelector('.email-list');
+      emailList.innerHTML = '';
+
+      emails.forEach(email => {
+        const listItem = document.createElement('li');
+        listItem.textContent = email.subject;
+        listItem.addEventListener('click', () => {
+          displayEmailContent(email);
+        });
+        emailList.appendChild(listItem);
+      });
+    }
+
+    // Function to display the selected email content
+    function displayEmailContent(email) {
+      const emailContentDiv = document.querySelector('#email-content');
+      emailContentDiv.innerHTML = `
+    <h2>${email.subject}</h2>
+    <p><strong>From:</strong> ${email.sender}</p>
+    <p>${email.content}</p>
+  `;
+    }
+
+    // Call the function to populate the email list on page load
+    populateEmailList();
+
+
+  </script>
+
+</body>
+
+</html>
