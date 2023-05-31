@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mes offres d'emplois</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h1>Mes offres d'emplois</h1>
+    <ul id="liste-offres"></ul>
+
+    <script>
+        var offresEnregistrees = localStorage.getItem('offres');
+        var offres = offresEnregistrees ? JSON.parse(offresEnregistrees) : [];
+
+        var listeOffres = document.getElementById('liste-offres');
+        for (var i = 0; i < offres.length; i++) {
+            var offreEmploi = offres[i];
+            var offreItem = document.createElement('li');
+            offreItem.textContent = offreEmploi.poste + ' | ' + offreEmploi.entreprise + ' | ' + offreEmploi.lieu;
+            listeOffres.appendChild(offreItem);
+        }
+    </script>
+</body>
+
+</html>
