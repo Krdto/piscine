@@ -116,7 +116,7 @@ footer {
 }
 
 .map-container iframe {
-    left: 500px;
+    left: 50px;
     top: 70px;
     height: 100%;
     width: 100%;
@@ -289,5 +289,6 @@ h2 {
     border-radius: 15px;
     width: 100%;
     color: white;
-    margin-top: 30px;
+    /*margin-top: 30px;*/
+    margin-left: 120px;
 }
