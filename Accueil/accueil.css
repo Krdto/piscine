@@ -267,7 +267,7 @@ footer {
 
 .intro {
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 250px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     margin: 8rem;
 }
@@ -334,6 +334,11 @@ h2 {
     width: 100%;
     color: white;
     margin-left: 20px;
+}
+
+.photo-intro {
+    margin-top: 5px;
+    margin-right: 0%;
 }
 
 
@@ -442,30 +447,10 @@ h2 {
 }
 
 
-/* Responsive design for extra large screens (big desktops, 1440px and above) */
+/* Responsive design for extra large screens (big desktops, 1440px and above)*/
 
 @media only screen and (min-width: 1440px) {
-    .carousel,
-    .carousel-item {
-        width: 1000px;
-    }
-    .text-container {
-        width: 1100px;
-    }
     .map-responsive iframe {
         left: 0;
-    }
-    .intro {
-        margin: 12rem;
-    }
-    .bdy {
-        padding: 90px;
-    }
-    .section {
-        width: 60%;
-        margin-top: 50px;
-    }
-    .section1 {
-        margin-left: 30px;
     }
 }

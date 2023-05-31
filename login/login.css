@@ -248,3 +248,31 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
+
+
+/* Responsive design for small screens (phones, 767px and below) */
+
+@media only screen and (max-width: 767px) {
+    header {
+        flex-direction: column;
+    }
+    nav ul,
+    .rubriques ul,
+    .contact ul {
+        flex-direction: column;
+    }
+}
+
+
+/* Responsive design for medium screens (tablets, 768px to 1023px) */
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    header {
+        flex-direction: row;
+    }
+    nav ul,
+    .rubriques ul,
+    .contact ul {
+        flex-direction: row;
+    }
+}
