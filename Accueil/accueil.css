@@ -41,6 +41,48 @@ nav ul li a:hover {
     color: #5190D3;
 }
 
+.rubriques {
+    text-align: left;
+}
+
+.rubriques ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+.rubriques ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+}
+
+.rubriques ul li a:hover {
+    color: #5190D3;
+}
+
+.contact {
+    text-align: left;
+}
+
+.contact ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+.contact ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+}
+
+.contact ul li a:hover {
+    color: #5190D3;
+}
+
 .carousel-caption {
     background-color: rgba(0, 0, 0, 0.5);
     transition: opacity 1s;
@@ -108,19 +150,20 @@ footer {
     transition: transform 0.5s ease-in-out;
 }
 
-.map-container {
+.map-responsive {
     overflow: hidden;
-    padding-bottom: 56.25%;
+    padding-bottom: 20%;
     position: relative;
     height: 0;
 }
 
-.map-container iframe {
-    left: 50px;
-    top: 70px;
+.map-responsive iframe {
+    left: 0;
+    top: 0;
     height: 100%;
     width: 100%;
     position: absolute;
+    left: 1400px;
 }
 
 .b1 {
@@ -234,6 +277,7 @@ footer {
     justify-content: space-around;
     background-color: #f2f2f2;
     font-family: Arial, sans-serif;
+    padding: 50px;
 }
 
 .section {
@@ -289,6 +333,139 @@ h2 {
     border-radius: 15px;
     width: 100%;
     color: white;
-    /*margin-top: 30px;*/
-    margin-left: 120px;
+    margin-left: 20px;
+}
+
+
+/* Responsive design for small screens (phones, 767px and below) */
+
+@media only screen and (max-width: 767px) {
+    header {
+        flex-direction: column;
+    }
+    nav ul,
+    .rubriques ul,
+    .contact ul {
+        flex-direction: column;
+    }
+    .carousel,
+    .carousel-item {
+        width: 100%;
+        margin-left: 0;
+    }
+    .text-container {
+        width: 100%;
+    }
+    .map-responsive iframe {
+        left: 0;
+    }
+    .intro {
+        grid-template-columns: 1fr;
+    }
+    .bdy {
+        flex-direction: column;
+    }
+    .section {
+        width: 100%;
+        margin-top: 50px;
+    }
+    .section1 {
+        margin-left: 0;
+    }
+}
+
+
+/* Responsive design for medium screens (tablets, 768px to 1023px) */
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    header {
+        flex-direction: row;
+    }
+    nav ul,
+    .rubriques ul,
+    .contact ul {
+        flex-direction: row;
+    }
+    .carousel,
+    .carousel-item {
+        width: 650px;
+        margin-left: 150px;
+    }
+    .text-container {
+        width: 800px;
+    }
+    .map-responsive iframe {
+        left: 1400px;
+    }
+    .intro {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .bdy {
+        flex-direction: row;
+    }
+    .section {
+        width: 40%;
+        margin-top: 150px;
+    }
+    .section1 {
+        margin-left: 120px;
+    }
+}
+
+
+/* Responsive design for large screens (desktops, 1024px to 1439px) */
+
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+    .carousel,
+    .carousel-item {
+        width: 800px;
+    }
+    .text-container {
+        width: 900px;
+    }
+    .map-responsive iframe {
+        left: 0;
+    }
+    .intro {
+        margin: 10rem;
+    }
+    .bdy {
+        padding: 70px;
+    }
+    .section {
+        width: 50%;
+        margin-top: 100px;
+    }
+    .section1 {
+        margin-left: 60px;
+    }
+}
+
+
+/* Responsive design for extra large screens (big desktops, 1440px and above) */
+
+@media only screen and (min-width: 1440px) {
+    .carousel,
+    .carousel-item {
+        width: 1000px;
+    }
+    .text-container {
+        width: 1100px;
+    }
+    .map-responsive iframe {
+        left: 0;
+    }
+    .intro {
+        margin: 12rem;
+    }
+    .bdy {
+        padding: 90px;
+    }
+    .section {
+        width: 60%;
+        margin-top: 50px;
+    }
+    .section1 {
+        margin-left: 30px;
+    }
 }

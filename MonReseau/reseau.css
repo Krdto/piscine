@@ -21,7 +21,7 @@ header {
 
 nav {
     border-top: 3.5px solid #f2f2f2;
-    background-color: #142f92da;
+    background-color: #142f92;
 }
 
 nav ul {
@@ -53,6 +53,26 @@ footer {
     background-color: #1b1b2b;
     color: #5190D3;
     text-align: center;
+}
+
+.rubriques {
+    text-align: left;
+}
+
+.rubriques ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+.rubriques ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 20px;
+}
+
+.rubriques ul li a:hover {
+    color: #5190D3;
 }
 
 .b1 {
@@ -169,4 +189,20 @@ footer {
     width: 50px;
     margin-right: 20px;
     border-radius: 50%;
+}
+
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 20%;
+    position: relative;
+    height: 0;
+}
+
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 1400px;
 }
