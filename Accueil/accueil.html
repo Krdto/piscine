@@ -13,31 +13,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" async defer></script>
 
-
     <link rel="stylesheet" type="text/css" href="accueil.css">
     <script src="accueil.js"></script>
-
 </head>
 
 <body>
     <div id="wrapper">
         <header>
             <a href="/Accueil/accueil.html">
-                <img src="/assets/lf3f.png" alt="logo" id="logo">
+                <img src="/assets/lf3f.png" alt="logo" id="logo" width="100%">
             </a>
             <form action="/login/login.html">
                 <button onclick="" class="b1">Se connecter</button>
             </form>
-
         </header>
         <nav>
             <ul>
                 <li><a href="/Accueil/accueil.html">Accueil</a></li>
                 <li><a href="/MonReseau/reseau.html">Mon Réseau</a></li>
-                <li><a href="#">Vous</a></li>
-                <li><a href="#">Notifications</a></li>
-                <li><a href="#">Messagerie</a></li>
-                <li><a href="#">Emplois</a></li>
+                <li><a href="/Vous/vous.html">Vous</a></li>
+                <li><a href="/Notifications/notif.html">Notifications</a></li>
+                <li><a href="/Messagerie/msg.html">Messagerie</a></li>
+                <li><a href="/Emplois/emplois.html">Emplois</a></li>
             </ul>
         </nav>
 
@@ -56,7 +53,6 @@
                         <p class="lead">Nous avons compris que chaque membre de notre communauté a des objectifs uniques et notre plateforme est conçue pour vous aider à les atteindre.</p>
                     </div>
                 </div>
-
             </div>
 
             <div class="row">
@@ -157,7 +153,6 @@
                         </a>
                     </div>
                 </div>
-
             </div>
             <div class="bdy">
                 <div class="section">
@@ -179,11 +174,30 @@
         </main>
 
         <footer>
-            <p>Contactez-nous par <a href="mailto:admin@eceIn@gmail.fr">mail</a>, <a href="tel:0652971191">téléphone</a> ou adresse physique. Voici notre localisation sur Google Maps:</p>
+            <img src="/assets/lf3f.png" alt="logo" id="logo">
+            <div class="rubriques">
+                <p class="lead">Rubriques</p>
+                <ul>
+                    <li><a href="/Accueil/accueil.html">Accueil</a></li>
+                    <li><a href="/MonReseau/reseau.html">Mon Réseau</a></li>
+                    <li><a href="/Vous/vous.html">Vous</a></li>
+                    <li><a href="/Notifications/notif.html">Notifications</a></li>
+                    <li><a href="/Messagerie/msg.html">Messagerie</a></li>
+                    <li><a href="/Emplois/emplois.html">Emplois</a></li>
+                </ul>
+            </div>
+            <div class="contact">
+                <p class="lead">Nous contacter</p>
+                <ul>
+                    <li><a href="mailto:ecein75015@gmail.com"><i style="font-size:24px" class="fa">&#xf0e0;</i></a></li>
+                    <li><a href="tel:+33652971191"><i style="font-size:24px" class="fa">&#xf095;</i></a></li>
+                    <li><a href="https://www.instagram.com/baelliot_/"><i style="font-size: 24px;" class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+            </div>
             <!-- Intégration de Google Maps ici -->
-            <div class="map-container">
-                <iframe src="https://maps.google.com/maps?q=ece%20paris&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0" allowfullscreen>
-                </iframe>
+            <div class="map-responsive">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.366293212561!2d2.2885659!3d48.851225199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701b4f58251b%3A0x167f5a60fb94aa76!2sECE%20-%20Ecole%20d&#39;ing%C3%A9nieurs%20-%20Engineering%20school.!5e0!3m2!1sfr!2sfr!4v1685532254009!5m2!1sfr!2sfr"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </footer>
     </div>
