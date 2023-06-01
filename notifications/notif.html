@@ -12,6 +12,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
 
     <link rel="stylesheet" type="text/css" href="notif.css">
@@ -35,7 +36,7 @@
                 <li><a href="/Accueil/accueil.html">Accueil</a></li>
                 <li><a href="/MonReseau/reseau.html">Mon Réseau</a></li>
                 <li><a href="#">Vous</a></li>
-                <li><a href="/notifications/notif.html">Notifications <p class="nbNotif"></p></a></li>
+                <li><a href="/notifications/notif.html">Notifications<p class="nbNotif"></p></a></li>
                 <li><a href="#">Messagerie</a></li>
                 <li><a href="#">Emplois</a></li>
             </ul>
@@ -46,14 +47,9 @@
                 <div class="contenuNotif">
 
                 </div>
-                <div class="listeNotif">
-                    <h1>Notifications</h1>
-                    <div class="notification error" id="notification" onclick="displayNotificationContent(1)">
-                        <p>Test</p>
-                    </div>
-                    <div class="notification Lu" id="notification" onclick="displayNotificationContent(2)">
-                        <p>Test2</p>
-                    </div>
+                <div class="listeNotif" id="listeNotif">
+                    <H1>Notifications</H1>
+
 
 
 

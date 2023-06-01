@@ -300,6 +300,7 @@ h2 {
     border-radius: 50%;
     text-align: center;
     color: white;
+    opacity: 100%;
 
 }
 
@@ -311,6 +312,7 @@ h2 {
 
 .listeNotif {
     width: 35%;
+    height: 50%;
     background-color: #f0f0f0;
     border: 1px solid #ccc;
     padding: 10px;
@@ -319,6 +321,15 @@ h2 {
 }
 
 .notification {
+    float: none;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#notification{
     float: none;
     margin-bottom: 10px;
     padding: 10px;
@@ -343,7 +354,7 @@ h2 {
     float: right;
     border: 3.5px solid #0066c8;
     padding: 10px;
-    display: none;
+    opacity: 0%;
     /* margin: 1%; */
     /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
 }
