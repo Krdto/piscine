@@ -16,6 +16,14 @@ footer {
     text-align: center;
 }
 
+.logo-footer {
+    max-width: 20%;
+    max-height: 20%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .map-responsive {
     overflow: hidden;
     padding-bottom: 20%;
@@ -690,4 +698,118 @@ nav ul li a:hover {
 
 .recommendation_content {
     width: 100%;
+}
+
+
+/* Responsive design for small screens (phones, 767px and below) */
+
+@media only screen and (max-width: 767px) {
+    header {
+        flex-direction: column;
+    }
+    nav ul,
+    .rubriques ul,
+    .contact ul {
+        flex-direction: column;
+    }
+    .carousel,
+    .carousel-item {
+        width: 100%;
+        margin-left: 0;
+    }
+    .text-container {
+        width: 100%;
+    }
+    .map-responsive iframe {
+        left: 0;
+    }
+    .intro {
+        grid-template-columns: 1fr;
+    }
+    .bdy {
+        flex-direction: column;
+    }
+    .section {
+        width: 100%;
+        margin-top: 50px;
+    }
+    .section1 {
+        margin-left: 0;
+    }
+}
+
+
+/* Responsive design for medium screens (tablets, 768px to 1023px) */
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    header {
+        flex-direction: row;
+    }
+    nav ul,
+    .rubriques ul,
+    .contact ul {
+        flex-direction: row;
+    }
+    .carousel,
+    .carousel-item {
+        width: 650px;
+        margin-left: 150px;
+    }
+    .text-container {
+        width: 800px;
+    }
+    .map-responsive iframe {
+        left: 1400px;
+    }
+    .intro {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .bdy {
+        flex-direction: row;
+    }
+    .section {
+        width: 40%;
+        margin-top: 150px;
+    }
+    .section1 {
+        margin-left: 120px;
+    }
+}
+
+
+/* Responsive design for large screens (desktops, 1024px to 1439px) */
+
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+    .carousel,
+    .carousel-item {
+        width: 800px;
+    }
+    .text-container {
+        width: 900px;
+    }
+    .map-responsive iframe {
+        left: 0;
+    }
+    .intro {
+        margin: 10rem;
+    }
+    .bdy {
+        padding: 70px;
+    }
+    .section {
+        width: 50%;
+        margin-top: 100px;
+    }
+    .section1 {
+        margin-left: 60px;
+    }
+}
+
+
+/* Responsive design for extra large screens (big desktops, 1440px and above)*/
+
+@media only screen and (min-width: 1440px) {
+    .map-responsive iframe {
+        left: 0;
+    }
 }
