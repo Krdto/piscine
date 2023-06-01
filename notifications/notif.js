@@ -18,7 +18,7 @@ function initMap() {
 
 const notifications = [
     {
-        id: 1,
+        id: 0,
         autor: "ECE",
         subject: "Test resumé notif",
         content: "Test texte notification",
@@ -26,7 +26,7 @@ const notifications = [
 
     },
     {
-        id: 2,
+        id: 1,
         autor: "ECE2",
         subject: "Test2 resumé notif",
         content: "Test2 texte notification",
@@ -34,7 +34,7 @@ const notifications = [
 
     },
     {
-        id: 3,
+        id: 2,
         autor: "ECE3",
         subject: "Test3 resumé notif",
         content: "Test3 texte notification",
@@ -61,7 +61,7 @@ $(function () {
     )
 
     $(".notification").click(function () {
-        displayNotificationContent(1)// faudra definir le paramètre id pour qu'il récupère quel id de notif c'est
+        affichNotif()// faudra definir le paramètre id pour qu'il récupère quel id de notif c'est
     })
 
     $(".listeNotif").click(function () {
@@ -107,7 +107,109 @@ function displayNotificationContent(id) {
 `;
 }
 
+function affichNotif() {
+    const contentNotif = document.querySelector('.contenuNotif');
+    const id = document.getElementById(contentNotif);
+    
 
+    //const id = notifications.find(element => element.id);
+    $(".contenuNotif").css("opacity", "100%");
+    alert("l'id de l'utilisateur est", id);
+    contentNotif.innerHTML = `
+  <h2><strong>De : </strong>${notifications[id].autor}</h2>
+  <p>${notifications[id].content}</p>
+`;
+}
+
+
+
+
+
+function initNotif() {
+    const spot1 = document.querySelector('.listeNotif');
+    for (let i = 0; i < notifications.length; i++) {
+        if (spot1) {
+            if (notifications[i].statut == 0)
+            {
+                const notif = document.createElement('div');
+                notif.classList.add('notification', 'error');
+                notif.style.cursor = 'pointer';
+                notif.id = i;
+                notif.addEventListener('click', function() {
+                    displayNotificationContent(i);
+                  });
+                notif.innerHTML = `
+                <h2><strong>${notifications[i].autor}</strong></h2>
+                <p>${notifications[i].subject}</p>
+                `
+                spot1.insertAdjacentElement("beforeend", notif);
+            }
+
+            else if(notifications[i].statut == 1)
+            {
+                const notif = document.createElement('div');
+                notif.classList.add('notification', 'Lu');
+                notif.id = i;
+                notif.style.cursor = 'pointer';
+                notif.addEventListener('click', function() {
+                    displayNotificationContent(i);
+                  });
+                notif.innerHTML = `
+                <h2><strong>${notifications[i].autor}</strong></h2>
+                <p>${notifications[i].subject}</p>
+                `
+                spot1.insertAdjacentElement("beforeend", notif);
+
+            }
+        }        
+    }            
+}
+
+function lectureNotif() {
+
+    let test = document.getElementsByClassName(".notification");
+    if (test.className == "notification alert") {
+        test.className = "notifications Lu";
+    }
+    let html = "<div>Clique sur la notification</div>";
+    document.body.innerHTML = html;
+    ("<p>La notif a été lue</p>").appendTo(document.contenuNotif);
+
+
+}
+
+function selectNotif() {
+    const listeNotif = document.querySelector('.listeNotif');
+    let nbNotif = count(listeNotif);
+    listeNotif.innerHTML = '';
+
+    notifs.forEach(notification => {
+        const listItem = document.createElement('li');
+        listItem.textContent = notification.subject;
+        listItem.addEventListener('click', () => {
+            displayNotif(notification);
+        });
+        listeNotif.appendChild(listItem);
+    });
+}
+
+function displayNotif(notification) {
+    const contentNotif = document.querySelector('.notification');
+    contentNotif.innerHTML = `<h2>${notifs.subject}</h2>
+        <p><strong>From:</strong> ${notifs.autor}</p>
+        <p>${notifs.content}</p>`
+        ;
+
+}
+
+function resumeNotif() {
+    const resume = document.querySelector('.notification');
+    const selectedNotification = notifications.find(notification => notification.id === id);
+
+    resume.innerHTML = `
+      <p><strong>${selectedNotification.subject}</strong></p>
+    `;
+}
 
 function initNotif2() {
     let nbNotif = 0;
@@ -159,99 +261,4 @@ function initNotif2() {
 
         }
     }
-}
-
-function initNotif() {
-    const spot1 = document.querySelector('.listeNotif');
-
-    for (let i = 0; i < notifications.length; i++) {
-
-        if (spot1) {
-
-            if (notifications[i].statut == 0)
-            {
-                const notif = document.createElement('div');
-                notif.classList.add('notification', 'error');
-
-                notif.innerHTML = `
-                <h2><strong>${notifications[i].autor}</strong></h2>
-                <p>${notifications[i].subject}</p>
-                `
-
-                spot1.insertAdjacentElement("beforeend", notif);
-
-    
-            }
-
-            else if(notifications[i].statut == 1)
-            {
-                const notif = document.createElement('div');
-                notif.classList.add('notification', 'Lu');
-
-                notif.innerHTML = `
-                <h2><strong>${notifications[i].autor}</strong></h2>
-                <p>${notifications[i].subject}</p>
-                `
-
-                spot1.insertAdjacentElement("beforeend", notif);
-
-            }
-            
-
-            
-            
-        }
-
-        
-    }
-
-            
-}
-
-function lectureNotif() {
-
-    let test = document.getElementsByClassName(".notification");
-    if (test.className == "notification alert") {
-        test.className = "notifications Lu";
-    }
-    let html = "<div>Clique sur la notification</div>";
-    document.body.innerHTML = html;
-    ("<p>La notif a été lue</p>").appendTo(document.contenuNotif);
-
-
-}
-
-
-
-function selectNotif() {
-    const listeNotif = document.querySelector('.listeNotif');
-    let nbNotif = count(listeNotif);
-    listeNotif.innerHTML = '';
-
-    notifs.forEach(notification => {
-        const listItem = document.createElement('li');
-        listItem.textContent = notification.subject;
-        listItem.addEventListener('click', () => {
-            displayNotif(notification);
-        });
-        listeNotif.appendChild(listItem);
-    });
-}
-
-function displayNotif(notification) {
-    const contentNotif = document.querySelector('.notification');
-    contentNotif.innerHTML = `<h2>${notifs.subject}</h2>
-        <p><strong>From:</strong> ${notifs.autor}</p>
-        <p>${notifs.content}</p>`
-        ;
-
-}
-
-function resumeNotif() {
-    const resume = document.querySelector('.notification');
-    const selectedNotification = notifications.find(notification => notification.id === id);
-
-    resume.innerHTML = `
-      <p><strong>${selectedNotification.subject}</strong></p>
-    `;
 }
