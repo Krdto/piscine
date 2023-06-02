@@ -39,7 +39,15 @@ const notifications = [
         subject: "Test3 resumé notif",
         content: "Test3 texte notification",
         statut: 0 // pour lu
-    }
+    },
+    {
+        id: 3,
+        autor: "ECE3",
+        subject: "Test3 resumé notif",
+        content: "Test3 texte notification",
+        statut: 0 // pour lu
+    },
+    
 ]
 
 
